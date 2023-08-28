@@ -1,4 +1,10 @@
 import React from 'react';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+import 'dayjs/locale/es';
+
+dayjs.extend(relativeTime);
+dayjs.locale("es");
 
 export default function Chirp({ chirp }) {
     return (
@@ -10,7 +16,7 @@ export default function Chirp({ chirp }) {
                 <div className="flex justify-between items-center">
                     <div>
                         <span className="text-gray-800">{chirp.user.name}</span>
-                        <small className="ml-2 text-sm text-gray-600">{new Date(chirp.created_at).toLocaleString()}</small>
+                        <small className="ml-2 text-sm text-gray-600">{dayjs(chirp.created_at).fromNow()}</small>
                     </div>
                 </div>
                 <p className="mt-4 text-lg text-gray-900">{chirp.message}</p>
