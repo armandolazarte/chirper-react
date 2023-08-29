@@ -1,4 +1,4 @@
-import { Link, Head } from '@inertiajs/react';
+import { Link, Head } from '@inertiajs/react'
 
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
     return (
@@ -333,5 +333,5 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                 }
             `}</style>
         </>
-    );
+    )
 }

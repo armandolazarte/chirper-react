@@ -1,12 +1,12 @@
-import { Fragment } from 'react';
-import { Dialog, Transition } from '@headlessui/react';
+import { Fragment } from 'react'
+import { Dialog, Transition } from '@headlessui/react'
 
 export default function Modal({ children, show = false, maxWidth = '2xl', closeable = true, onClose = () => {} }) {
     const close = () => {
         if (closeable) {
-            onClose();
+            onClose()
         }
-    };
+    }
 
     const maxWidthClass = {
         sm: 'sm:max-w-sm',
@@ -14,10 +14,14 @@ export default function Modal({ children, show = false, maxWidth = '2xl', closea
         lg: 'sm:max-w-lg',
         xl: 'sm:max-w-xl',
         '2xl': 'sm:max-w-2xl',
-    }[maxWidth];
+    }[maxWidth]
 
     return (
-        <Transition show={show} as={Fragment} leave="duration-200">
+        <Transition
+            show={show}
+            as={Fragment}
+            leave="duration-200"
+        >
             <Dialog
                 as="div"
                 id="modal"
@@ -53,5 +57,5 @@ export default function Modal({ children, show = false, maxWidth = '2xl', closea
                 </Transition.Child>
             </Dialog>
         </Transition>
-    );
+    )
 }
